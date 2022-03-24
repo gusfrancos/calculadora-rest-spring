@@ -26,7 +26,6 @@
 		<module>endpoint</module>
 	</modules>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -81,7 +80,5 @@
 			<artifactId>json</artifactId>
 			<version>20211205</version>
 		</dependency>
-
-
 	</dependencies>
 </project>

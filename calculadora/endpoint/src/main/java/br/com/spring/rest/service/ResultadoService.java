@@ -4,12 +4,16 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 
 
 @Service
-public class Resultado {
+public class ResultadoService {
+	
+	private static Logger logger = LoggerFactory.getLogger(ResultadoService.class);
 
 	static String valorResultado = null;
 
@@ -18,6 +22,7 @@ public class Resultado {
 	}
 
 	public static String obterJson() throws InterruptedException {
+		logger.info("Aguardando resposta da fila para montar e devolver o JSON");
 		boolean esperar = true;
 		String json = null;
 		int loop = 0;
@@ -29,19 +34,17 @@ public class Resultado {
 		}
 		
 		if(!Objects.isNull(valorResultado)) {
+			logger.info("Devolvendo o resultado:" + valorResultado);
 			valorResultado = null;
 			return resultadoJson(json);
 		}
-		
+		logger.info("Aguardando resposta da fila para montar e devolver o JSON");
 		return "Não foi possível recuperar o resultado";
-
 	}
 	
 	static String resultadoJson(String texto) { 
 		JSONObject json = new JSONObject();
 		json.put("result",texto);
 		return json.toString();
-		
 	}
-
 }

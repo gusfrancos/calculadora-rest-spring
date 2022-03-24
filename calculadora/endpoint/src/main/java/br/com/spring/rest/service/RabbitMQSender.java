@@ -1,5 +1,7 @@
 package br.com.spring.rest.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +12,8 @@ import br.com.spring.rest.model.Operacao;
 @Service
 public class RabbitMQSender {
 
+	private static Logger logger = LoggerFactory.getLogger(RabbitMQSender.class);
+	
 	@Autowired
 	private AmqpTemplate amqpTemplate;
 	
@@ -21,7 +25,7 @@ public class RabbitMQSender {
 	String kafkaTopic = "calculadora_topic";
 
 	public void send(Operacao operacao) {
+		logger.info("Enviando msg = " + operacao);
 		amqpTemplate.convertAndSend(exchange, routingkey, operacao);
-		System.out.println("Enviando msg = " + operacao);
 	}
 }

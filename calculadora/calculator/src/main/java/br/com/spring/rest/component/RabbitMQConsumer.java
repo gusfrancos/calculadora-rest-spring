@@ -1,5 +1,7 @@
-package br.com.spring.rest.service;
+package br.com.spring.rest.component;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -12,10 +14,13 @@ public class RabbitMQConsumer {
 
 	@Autowired
 	private CalculatorController calculatorControler;
+	
+	private static Logger logger = LoggerFactory.getLogger(RabbitMQConsumer.class);
+
 
 	@RabbitListener(queues = "${calculadora.rabbitmq.queue}")
 	public void receivedMessage(@Payload String json) {
-		System.out.println("Mensagem recebida do RabbitMQ: " + json);
+		logger.info("Mensagem recebida do RabbitMQ (calculator): " + json);
 		calculatorControler.calcular(json);
 	}
 }
