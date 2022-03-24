@@ -163,3 +163,94 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2022-03-24 08:48:30.530  INFO 12904 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Iniciando a operação de calcular
 2022-03-24 08:48:30.544  INFO 12904 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.spring.rest.service.RabbitMQSender   : Enviando msg = 506.99
 2022-03-24 08:48:30.588  INFO 12904 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Mensagem com resultado enviada para o RabbitMQ resposta-calculadora com sucesso
+2022-03-24 09:08:39.863  INFO 10164 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Starting CalculatorApplication on DESKTOP-O9GK8VF with PID 10164 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator)
+2022-03-24 09:08:39.925  INFO 10164 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : No active profile set, falling back to default profiles: default
+2022-03-24 09:08:40.073  INFO 10164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-24 09:08:40.073  INFO 10164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-24 09:08:42.292  INFO 10164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-03-24 09:08:42.311  INFO 10164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-24 09:08:42.312  INFO 10164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-03-24 09:08:42.483  INFO 10164 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-24 09:08:42.484 DEBUG 10164 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2022-03-24 09:08:42.484  INFO 10164 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2410 ms
+2022-03-24 09:08:43.481  INFO 10164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-24 09:08:43.497 DEBUG 10164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-24 09:08:43.628 DEBUG 10164 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2022-03-24 09:08:43.680 DEBUG 10164 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-03-24 09:08:43.700 DEBUG 10164 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-24 09:08:43.947  INFO 10164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-24 09:08:44.057  INFO 10164 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-03-24 09:08:44.184  INFO 10164 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#6c311a60:0/SimpleConnection@12fb03ab [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64374]
+2022-03-24 09:08:44.327  INFO 10164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-03-24 09:08:44.334  INFO 10164 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Started CalculatorApplication in 5.257 seconds (JVM running for 6.145)
+2022-03-24 09:08:44.337  INFO 10164 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : API de calculo pronta para realizar as requisições
+2022-03-24 09:09:12.712  INFO 10164 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.rest.component.RabbitMQConsumer    : Mensagem recebida do RabbitMQ (calculator): {"@id":1,"valorA":450.23,"valorB":56.76,"tipoOperacao":"Sm"}
+2022-03-24 09:09:12.712  INFO 10164 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Iniciando a operação de calcular
+2022-03-24 09:09:12.739  INFO 10164 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.spring.rest.service.RabbitMQSender   : Enviando msg = 506.99
+2022-03-24 09:09:12.816  INFO 10164 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Mensagem com resultado enviada para o RabbitMQ resposta-calculadora com sucesso
+2022-03-24 09:14:57.097  INFO 10288 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Starting CalculatorApplication on DESKTOP-O9GK8VF with PID 10288 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator)
+2022-03-24 09:14:57.100  INFO 10288 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : No active profile set, falling back to default profiles: default
+2022-03-24 09:14:57.272  INFO 10288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-24 09:14:57.274  INFO 10288 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-24 09:15:00.581  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-03-24 09:15:00.627  INFO 10288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-24 09:15:00.628  INFO 10288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-03-24 09:15:00.879  INFO 10288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-24 09:15:00.880 DEBUG 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2022-03-24 09:15:00.881  INFO 10288 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3607 ms
+2022-03-24 09:15:02.262  INFO 10288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-24 09:15:02.284 DEBUG 10288 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-24 09:15:02.416 DEBUG 10288 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2022-03-24 09:15:02.468 DEBUG 10288 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-03-24 09:15:02.484 DEBUG 10288 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-24 09:15:02.732  INFO 10288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-24 09:15:02.857  INFO 10288 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-03-24 09:15:03.027  INFO 10288 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7036a084:0/SimpleConnection@53ace706 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64421]
+2022-03-24 09:15:03.191  INFO 10288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-03-24 09:15:03.201  INFO 10288 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Started CalculatorApplication in 7.333 seconds (JVM running for 9.646)
+2022-03-24 09:15:03.206  INFO 10288 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : API de calculo pronta para realizar as requisições
+2022-03-24 09:15:33.819  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Starting CalculatorApplication on DESKTOP-O9GK8VF with PID 15132 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator)
+2022-03-24 09:15:33.822  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : No active profile set, falling back to default profiles: default
+2022-03-24 09:15:33.940  INFO 15132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-03-24 09:15:33.942  INFO 15132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-03-24 09:15:36.545  INFO 15132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-03-24 09:15:36.566  INFO 15132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-24 09:15:36.567  INFO 15132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-03-24 09:15:36.721  INFO 15132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-24 09:15:36.721 DEBUG 15132 --- [restartedMain] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2022-03-24 09:15:36.722  INFO 15132 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2780 ms
+2022-03-24 09:15:37.633  INFO 15132 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-24 09:15:37.650 DEBUG 15132 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-03-24 09:15:37.776 DEBUG 15132 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 mappings in 'requestMappingHandlerMapping'
+2022-03-24 09:15:37.826 DEBUG 15132 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2022-03-24 09:15:37.843 DEBUG 15132 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-03-24 09:15:38.081  INFO 15132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-24 09:15:38.179  INFO 15132 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-03-24 09:15:38.294  INFO 15132 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#62cd2605:0/SimpleConnection@4d2e2a9 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64422]
+2022-03-24 09:15:38.438  INFO 15132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-03-24 09:15:38.445  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Started CalculatorApplication in 5.497 seconds (JVM running for 6.424)
+2022-03-24 09:15:38.449  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : API de calculo pronta para realizar as requisições
+2022-03-24 09:16:25.604  INFO 15132 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.rest.component.RabbitMQConsumer    : Mensagem recebida do RabbitMQ (calculator): {"@id":1,"valorA":450.23,"valorB":56.76,"tipoOperacao":"Sm"}
+2022-03-24 09:16:25.604  INFO 15132 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Iniciando a operação de calcular
+2022-03-24 09:16:25.629  INFO 15132 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.spring.rest.service.RabbitMQSender   : Enviando msg = 506.99
+2022-03-24 09:16:25.672  INFO 15132 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] b.c.s.r.controller.CalculatorController  : Mensagem com resultado enviada para o RabbitMQ resposta-calculadora com sucesso
+2022-03-24 09:18:16.564  INFO 15132 --- [Thread-5] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-03-24 09:18:17.398  INFO 15132 --- [Thread-5] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-03-24 09:18:17.403  INFO 15132 --- [Thread-5] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2022-03-24 09:18:17.404  INFO 15132 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-24 09:18:17.487  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Iniciando a api que realiza calculo
+2022-03-24 09:18:17.555  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Starting CalculatorApplication on DESKTOP-O9GK8VF with PID 15132 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\calculator)
+2022-03-24 09:18:17.556  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : No active profile set, falling back to default profiles: default
+2022-03-24 09:18:18.143  INFO 15132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-03-24 09:18:18.146  INFO 15132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-24 09:18:18.148  INFO 15132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-03-24 09:18:18.226  INFO 15132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-24 09:18:18.226  INFO 15132 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 665 ms
+2022-03-24 09:18:18.332  INFO 15132 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-24 09:18:18.450  INFO 15132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-03-24 09:18:18.463  INFO 15132 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [localhost:5672]
+2022-03-24 09:18:18.584  INFO 15132 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#772af42:0/SimpleConnection@2755dbab [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64443]
+2022-03-24 09:18:18.792  INFO 15132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-03-24 09:18:18.794  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : Started CalculatorApplication in 1.301 seconds (JVM running for 166.773)
+2022-03-24 09:18:18.798  INFO 15132 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-03-24 09:18:18.799  INFO 15132 --- [restartedMain] b.com.spring.rest.CalculatorApplication  : API de calculo pronta para realizar as requisições
