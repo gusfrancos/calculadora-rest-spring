@@ -16,5 +16,4 @@ public class EndpointApplication {
 		SpringApplication.run(EndpointApplication.class, args);
 		logger.info("API com endpoints pronta para receber as requisições");
 	}
-
 }

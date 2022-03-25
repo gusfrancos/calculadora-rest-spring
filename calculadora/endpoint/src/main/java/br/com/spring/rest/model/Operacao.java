@@ -47,5 +47,4 @@ public class Operacao {
 	public String toString() {
 		return "Operacao [valorA=" + valorA + ", valorB=" + valorB + ", tipoOperacao=" + tipoOperacao + "]";
 	}
-
 }

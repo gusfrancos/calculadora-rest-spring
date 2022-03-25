@@ -1,0 +1,41 @@
+2022-03-24 18:59:57 [main] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-24 18:59:57 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-24 18:59:58 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Starting EndpointApplication on DESKTOP-O9GK8VF with PID 5564 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint)
+2022-03-24 18:59:58 [restartedMain] DEBUG b.c.spring.rest.EndpointApplication - Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2022-03-24 18:59:58 [restartedMain] INFO b.c.spring.rest.EndpointApplication - No active profile set, falling back to default profiles: default
+2022-03-24 19:00:01 [restartedMain] INFO o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3198 ms
+2022-03-24 19:00:01 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-24 19:00:01 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
+2022-03-24 19:00:03 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Started EndpointApplication in 5.937 seconds (JVM running for 7.063)
+2022-03-24 19:00:03 [restartedMain] INFO b.c.spring.rest.EndpointApplication - API com endpoints pronta para receber as requisições
+2022-03-25 06:25:58 [main] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-25 06:25:58 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-25 06:25:59 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Starting EndpointApplication on DESKTOP-O9GK8VF with PID 11400 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint)
+2022-03-25 06:25:59 [restartedMain] DEBUG b.c.spring.rest.EndpointApplication - Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2022-03-25 06:25:59 [restartedMain] INFO b.c.spring.rest.EndpointApplication - No active profile set, falling back to default profiles: default
+2022-03-25 06:26:03 [restartedMain] INFO o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3669 ms
+2022-03-25 06:26:03 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-25 06:26:03 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
+2022-03-25 06:26:05 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Started EndpointApplication in 6.664 seconds (JVM running for 9.094)
+2022-03-25 06:26:05 [restartedMain] INFO b.c.spring.rest.EndpointApplication - API com endpoints pronta para receber as requisições
+2022-03-25 06:28:12 [main] INFO b.c.s.r.e.EndpointApplicationTests - Starting EndpointApplicationTests on DESKTOP-O9GK8VF with PID 12020 (started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint)
+2022-03-25 06:28:12 [main] DEBUG b.c.s.r.e.EndpointApplicationTests - Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2022-03-25 06:28:12 [main] INFO b.c.s.r.e.EndpointApplicationTests - No active profile set, falling back to default profiles: default
+2022-03-25 06:28:18 [main] INFO b.c.s.r.e.EndpointApplicationTests - Started EndpointApplicationTests in 6.659 seconds (JVM running for 11.615)
+2022-03-25 06:38:22 [main] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-25 06:38:22 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Iniciando a api com endpoints
+2022-03-25 06:38:23 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Starting EndpointApplication on DESKTOP-O9GK8VF with PID 17696 (C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint\target\classes started by andre in C:\Gustavo\Desenvolvimento\WORKSPACE_JAVA\calculadora-rest-spring\calculadora\endpoint)
+2022-03-25 06:38:23 [restartedMain] DEBUG b.c.spring.rest.EndpointApplication - Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2022-03-25 06:38:23 [restartedMain] INFO b.c.spring.rest.EndpointApplication - No active profile set, falling back to default profiles: default
+2022-03-25 06:38:25 [restartedMain] INFO o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2441 ms
+2022-03-25 06:38:25 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2022-03-25 06:38:25 [restartedMain] DEBUG o.s.b.w.s.ServletContextInitializerBeans - Mapping servlets: dispatcherServlet urls=[/]
+2022-03-25 06:38:27 [restartedMain] INFO b.c.spring.rest.EndpointApplication - Started EndpointApplication in 5.29 seconds (JVM running for 6.536)
+2022-03-25 06:38:27 [restartedMain] INFO b.c.spring.rest.EndpointApplication - API com endpoints pronta para receber as requisições
+2022-03-25 06:38:54 [http-nio-8080-exec-1] INFO o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-03-25 06:38:54 [http-nio-8080-exec-1] INFO o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2022-03-25 06:38:54 [http-nio-8080-exec-1] INFO b.c.s.rest.service.RabbitMQSender - Enviando msg = Operacao [valorA=450.23, valorB=56.76, tipoOperacao=Sm]
+2022-03-25 06:38:54 [http-nio-8080-exec-1] INFO b.c.s.r.c.EndpointController - Mensagem Somar enviada para o RabbitMQ calculadora com sucesso
+2022-03-25 06:38:54 [http-nio-8080-exec-1] INFO b.c.s.rest.service.ResultadoService - Aguardando resposta da fila para montar e devolver o JSON
+2022-03-25 06:38:54 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO b.c.s.r.component.RabbitMQConsumer - Mensagem recebida do RabbitMQ (endpoint): 506.99
+2022-03-25 06:38:55 [http-nio-8080-exec-1] INFO b.c.s.rest.service.ResultadoService - Devolvendo o resultado:506.99
