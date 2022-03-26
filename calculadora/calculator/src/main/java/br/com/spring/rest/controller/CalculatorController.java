@@ -8,8 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.google.gson.Gson;
-
 import br.com.spring.rest.model.Operacao;
 import br.com.spring.rest.service.CalculatorService;
 import br.com.spring.rest.service.RabbitMQSender;
@@ -27,18 +25,19 @@ public class CalculatorController {
 	
 	private static Logger logger = LoggerFactory.getLogger(CalculatorController.class);
 
-	public void calcular(String json) {
+	public void calcular(Operacao operacao) {
 		logger.info("Iniciando a operação de calcular");
 		BigDecimal resultado = null;
-		Operacao operacao = new Gson().fromJson(json, Operacao.class);
 		
 		resultado = operacao.getTipoOperacao().equals("Sm") ? calculatorService.somar(operacao.getValorA(), operacao.getValorB()) : resultado;
 		resultado = Objects.isNull(resultado)  &&  operacao.getTipoOperacao().equals("Dm") ? calculatorService.diminuir(operacao.getValorA(), operacao.getValorB()) : resultado;
 		resultado = Objects.isNull(resultado)  &&  operacao.getTipoOperacao().equals("Mt") ? calculatorService.multiplicar(operacao.getValorA(), operacao.getValorB()) : resultado;
 		resultado = Objects.isNull(resultado)  && operacao.getTipoOperacao().equals("Dv") ? calculatorService.dividir(operacao.getValorA(), operacao.getValorB()) : resultado;
 
+		operacao.setValorFinal(resultado);
+		
 		if(!Objects.isNull(resultado)) {
-			rabbitMQSender.send(resultado.toString());
+			rabbitMQSender.send(operacao);
 			logger.info("Mensagem com resultado enviada para o RabbitMQ resposta-calculadora com sucesso");
 		}
 	}

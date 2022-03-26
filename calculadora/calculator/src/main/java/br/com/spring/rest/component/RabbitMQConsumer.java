@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
+import com.google.gson.Gson;
+
 import br.com.spring.rest.controller.CalculatorController;
+import br.com.spring.rest.model.Operacao;
 
 @Component
 public class RabbitMQConsumer {
@@ -19,8 +22,9 @@ public class RabbitMQConsumer {
 
 
 	@RabbitListener(queues = "${calculadora.rabbitmq.queue}")
-	public void receivedMessage(@Payload String json) {
-		logger.info("Mensagem recebida do RabbitMQ (calculator): " + json);
-		calculatorControler.calcular(json);
+	public void receivedMessage(Operacao operacao) {
+		logger.info("Mensagem recebida do RabbitMQ (calculator): " + operacao);
+		//Operacao operacao = new Gson().fromJson(json, Operacao.class);
+		calculatorControler.calcular(operacao);
 	}
 }

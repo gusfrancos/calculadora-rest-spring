@@ -21,34 +21,41 @@ public class EndpointController {
 	@Autowired
 	RabbitMQSender rabbitMQSender;
 	
+	@Autowired
+	ResultadoService resultado;
+	
 	private static Logger logger = LoggerFactory.getLogger(EndpointController.class);
 
 	
 	@GetMapping(value = "/somar")
 	public String somar(@RequestParam("a") BigDecimal a,@RequestParam("b") BigDecimal b) throws InterruptedException {
-		rabbitMQSender.send(new Operacao(a,b,"Sm"));
+		Operacao operacao = new Operacao(a,b,"Sm");
+		rabbitMQSender.send(operacao);
 		logger.info("Mensagem Somar enviada para o RabbitMQ calculadora com sucesso", EndpointController.class.getNestHost());
-		return ResultadoService.obterJson();
+		return resultado.obterJson(operacao);
 	}
 	
 	@GetMapping(value = "/diminuir")
 	public String diminuir(@RequestParam("a") BigDecimal a,@RequestParam("b") BigDecimal b) throws InterruptedException {
-		rabbitMQSender.send(new Operacao(a,b,"Dm"));
+		Operacao operacao = new Operacao(a,b,"Dm");
+		rabbitMQSender.send(operacao);
 		logger.info("Mensagem Diminuir enviada para o RabbitMQ calculadora com sucesso");
-		return ResultadoService.obterJson();
+		return resultado.obterJson(operacao);
 	}
 	
 	@GetMapping(value = "/multiplicar")
 	public String multiplicar(@RequestParam("a") BigDecimal a,@RequestParam("b") BigDecimal b) throws InterruptedException {
-		rabbitMQSender.send(new Operacao(a,b,"Mt"));
+		Operacao operacao = new Operacao(a,b,"Mt");
+		rabbitMQSender.send(operacao);
 		logger.info("Mensagem Multiplicar enviada para o RabbitMQ calculadora com sucesso");
-		return ResultadoService.obterJson();
+		return resultado.obterJson(operacao);
 	}
 	
 	@GetMapping(value = "/dividir")
 	public String dividir(@RequestParam("a") BigDecimal a,@RequestParam("b") BigDecimal b) throws InterruptedException {
-		rabbitMQSender.send(new Operacao(a,b,"Dv"));
+		Operacao operacao = new Operacao(a,b,"Mt");
+		rabbitMQSender.send(operacao);
 		logger.info("Mensagem Dividir emviada para o RabbitMQ calculadora com sucesso");
-		return ResultadoService.obterJson();
+		return resultado.obterJson(operacao);
 	}
 }

@@ -10,6 +10,7 @@
 		</discriminator>
 
 	    <sift>
+
 			<appender name="FILE-${logFileName}"
 				class="ch.qos.logback.core.rolling.RollingFileAppender">
 				<file>${DEV_HOME}/${logFileName}.log</file>
