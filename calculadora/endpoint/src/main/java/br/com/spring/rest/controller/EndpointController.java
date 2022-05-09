@@ -31,7 +31,7 @@ public class EndpointController {
 	public String somar(@RequestParam("a") BigDecimal a,@RequestParam("b") BigDecimal b) throws InterruptedException {
 		Operacao operacao = new Operacao(a,b,"Sm");
 		rabbitMQSender.send(operacao);
-		logger.info("Mensagem Somar enviada para o RabbitMQ calculadora com sucesso", EndpointController.class.getNestHost());
+		logger.info("Mensagem Somar enviada para o RabbitMQ calculadora com sucesso");
 		return resultado.obterJson(operacao);
 	}
 	
