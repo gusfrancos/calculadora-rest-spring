@@ -1,0 +1,48 @@
+version: '2'
+services:
+  rabbitmq1:
+    image: rabbitmq:3-management
+    container_name: rest
+    hostname: rest
+    ports:
+      - "8080:15672"
+    network_mode: "bridge"
+    volumes:
+     - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+    environment:
+     - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
+     - RABBITMQ_DEFAULT_USER=guest
+     - RABBITMQ_DEFAULT_PASS=guest
+     - CLUSTERED=true
+ 
+  rabbitmq2:
+    image: rabbitmq:3-management
+    container_name: calculadora
+    hostname: calculadora
+    ports:
+      - "8081:15672"
+    network_mode: "bridge"
+    volumes:
+     - $PWD/storage/rabbitmq2:/var/lib/rabbitmq
+    environment:
+     - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
+     - RABBITMQ_DEFAULT_USER=guest
+     - RABBITMQ_DEFAULT_PASS=guest
+     - CLUSTERED=true
+    links:
+     - rabbitmq1:rest
+ 
+  
+ 
+  haproxy:
+    image: haproxy:1.6
+    container_name: haproxy
+    hostname: haproxy
+    ports:
+      - 5672:5672
+      - 20000:20000
+    network_mode: "bridge"
+    links:
+      - rabbitmq1:rest
+      - rabbitmq2:calculadora
+    
