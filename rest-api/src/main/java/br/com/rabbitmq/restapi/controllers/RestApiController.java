@@ -1,8 +1,6 @@
-package br.com.rabbitmq.restapi;
+package br.com.rabbitmq.restapi.controllers;
 
 import java.math.BigDecimal;
-
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +23,7 @@ public class RestApiController {
 	private CalculadoraService calculadoraService;
 	
 	@GetMapping(path ="/somar")
-	public ResponseEntity<BigDecimal> sum(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
+	public ResponseEntity<BigDecimal> somar(@RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
 		LOGGER.info("[Rest API] - method somar [values {} | {}]", a, b);
 		BigDecimal result = calculadoraService.somar(a, b, "teste");
 		LOGGER.info("[Rest API] - method somar [values {} + {} = {}]", a, b, result);
