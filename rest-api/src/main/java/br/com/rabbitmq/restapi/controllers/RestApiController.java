@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "calcular", description = "Endpoint realizações de cálculo")
 @RestController
-@RequestMapping(value = "/calcular/")
+@RequestMapping(value = "/calcular")
 public class RestApiController {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(RestApiController.class);
@@ -32,7 +32,7 @@ public class RestApiController {
 	
 	@ApiOperation(value = "Operação de soma")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Resultado da soma"),
-			@ApiResponse(code = 404, message = "Operação inválida") })
+	@ApiResponse(code = 404, message = "Operação inválida") })
 	@GetMapping(path ="somar", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<BigDecimal> somar(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
 		LOGGER.info("[Rest API] - method somar [values {} | {}]", a, b);
