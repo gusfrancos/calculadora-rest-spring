@@ -56,6 +56,6 @@ public class CalculadoraService {
 	 * @return somatorio dos valores
 	 */
 	public BigDecimal multiplicar(BigDecimal a, BigDecimal b, String token) {
-		return (a.divide(b));
+		return (a.multiply(b));
 	}
 }
