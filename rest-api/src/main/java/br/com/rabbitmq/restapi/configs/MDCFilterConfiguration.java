@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "calculator.slf4jfilter")
+@ConfigurationProperties(prefix = "calculadora.slf4jfilter")
 public class MDCFilterConfiguration {
 
     public static final String DEFAULT_RESPONSE_TOKEN_HEADER = "Response_Token";

@@ -31,6 +31,5 @@ public class RabbitMQConfiguration {
 	Binding bindingMessages() {
 		return BindingBuilder.bind(messagesQueue()).to(messagesExchange()).with(QUEUE_NAME);
 	}
-
 }
 

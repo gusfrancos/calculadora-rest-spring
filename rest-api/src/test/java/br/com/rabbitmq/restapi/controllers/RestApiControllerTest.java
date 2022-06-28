@@ -68,11 +68,11 @@ public class RestApiControllerTest {
 			.andDo(print()).andExpect(status().isBadRequest());
 	}
 		
-	@Test
-	public void ParamCalcularSomarShouldReturnOk() throws Exception {
-		this.mockMvc.perform(get("/calcular/somar").param("a", "10").param("b", "20").contentType("application/json"))
-			.andDo(print()).andExpect(status().isOk());
-	}
+//	@Test
+//	public void ParamCalcularSomarShouldReturnOk() throws Exception {
+//		this.mockMvc.perform(get("/calcular/somar").param("a", "10").param("b", "20").contentType("application/json"))
+//			.andDo(print()).andExpect(status().isOk());
+//	}
 	
 	@Test
 	public void ParamCalcularSubtrairShouldReturnOk() throws Exception {
