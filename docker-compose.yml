@@ -1,4 +1,4 @@
-version: '2'
+version: '3.8'
 services:
   calculadora:
     image: rabbitmq:3-management
@@ -8,13 +8,12 @@ services:
       - "8080:15672"
     network_mode: "bridge"
     volumes:
-     - $PWD/storage/calculadora:/var/lib/rabbitmq
+      - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
+      - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+      - ./rabbitmq/logs:/var/log/rabbitmq/log
     environment:
      - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
      - RABBITMQ_DEFAULT_USER=guest
      - RABBITMQ_DEFAULT_PASS=guest
      - CLUSTERED=true
- 
-volumes:
-  devdojo_data:
-  calculadora:calculadora

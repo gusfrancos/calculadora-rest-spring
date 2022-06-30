@@ -1,0 +1,38 @@
+docker-compose up (Levanta o conteiner se o volume não existir vai gerar um conteiner apartir de um yml)
+docker ps (Lista de conteiners)
+docker ps -a (Lista de conteiners)
+docker-compose down
+docker image ls (lista todas as imagens)
+docker -it (id da Imagem) /bin/bash   / forma de executar uma imagem
+
+
+docker container ls	 (Lista os contêineres que estão em execução. (docker ps))
+docker container ls -a	 Lista todos os contêineres. (docker ps -a)
+docker image ls	 Lista as imagens (docker images)
+docker volume ls	 Lista os volumes
+docker network ls	 Lista as redes
+docker info	 Lista a quantidade de contêineres e imagens e informações do ambiente
+
+
+docker system prune
+Este comando remove :
+Todos os contêineres parados
+Todas as redes não usadas pelo menos por um contâiner
+Todas as imagens pendentes (dangling images)
+Todo o cache build pendente
+
+
+docker system prune --all --force --volumes
+Este comando remove:
+
+Todos os contêineres parados
+Todas as redes não usadas pelo menos por um contâiner
+Todos os volumes não usados por pelo menos um contêiner
+Todas as imagens sem nenhum contêiner associado
+Todo o cache build pendente
+
+
+https://hub.docker.com/
+
+
+mvn jib:dockerBuild  (monta imagem do seu APP sem enviar para o docker hub)
