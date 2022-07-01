@@ -75,8 +75,6 @@ public class RestApiController {
 		return ResponseEntity.ok(result);
 	}
 	
-	
-	
 	/**
 	 * @param response
 	 * @return
