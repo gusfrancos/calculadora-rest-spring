@@ -14,7 +14,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.rabbitmq.restapi.configs.RabbitMQConfiguration;
-import br.com.rabbitmq.restapi.dto.OperacaoRestDTO;
+import br.com.rabbitmq.restapi.dtos.OperacaoRestDTO;
 import br.com.rabbitmq.restapi.enums.OperacaoEnum;
 
 @Service
@@ -35,6 +35,7 @@ public class CalculadoraService {
 	public BigDecimal somar(BigDecimal a, BigDecimal b, String token) {
 		Message message = getMessage(a, b, token, OperacaoEnum.SUM);
 		
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE");
 		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
 				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
