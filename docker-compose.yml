@@ -5,15 +5,10 @@ services:
     container_name: calculadora
     hostname: calculadora
     ports:
-      - "8080:15672"
-    network_mode: "bridge"
-    volumes:
-      - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
+      - "15672:15672"
+      - "5672:5672"
     environment:
      - RABBITMQ_ERLANG_COOKIE=This_is_my_secret_phrase
      - RABBITMQ_DEFAULT_USER=guest
      - RABBITMQ_DEFAULT_PASS=guest
-     - RABBITMQ_CONFIG_FILE=%APPDATA%\RabbitMQ\rabbitmq.conf
-     - RABBITMQ_ADVANCED_CONFIG_FILE=%APPDATA%\RabbitMQ\advanced.config
-     - RABBITMQ_CONF_ENV_FILE=%APPDATA%\RabbitMQ\rabbitmq-env.conf
      - CLUSTERED=true
