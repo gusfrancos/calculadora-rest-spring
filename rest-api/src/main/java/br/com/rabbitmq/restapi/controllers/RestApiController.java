@@ -35,9 +35,9 @@ public class RestApiController {
 	@ApiResponse(code = 404, message = "Operação inválida") })
 	@GetMapping(path ="somar", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<BigDecimal> somar(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
-		LOGGER.info("[Rest API] - method somar [values {} | {}]", a, b);
+		LOGGER.info("[Rest API] [RestApiController] - Método somar [valores {} | {}]", a, b);
 		BigDecimal result = calculadoraService.somar(a, b, getToken(response));
-		LOGGER.info("[Rest API] - method somar [values {} + {} = {}]", a, b, result);
+		LOGGER.info("[Rest API] [RestApiController] - Método somar [values {} + {} = {}]", a, b, result);
 		return ResponseEntity.ok(result);
 	}
 	

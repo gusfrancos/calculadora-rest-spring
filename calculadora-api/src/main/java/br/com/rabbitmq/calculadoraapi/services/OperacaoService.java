@@ -14,7 +14,7 @@ public class OperacaoService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(OperacaoService.class);
 
 	public BigDecimal somar(OperacaoCalculadoraDTO operacaoDto) {
-		LOGGER.info("[Project Calculator API] - method calculate [OperacaoCalculatorDTO {}]", operacaoDto.toString());
+		LOGGER.info("[Project Calculator API] [OperacaoService] - Método Somar [OperacaoCalculatorDTO {}] Resultado:", operacaoDto.getValueA().add(operacaoDto.getValueB()));
 		return operacaoDto.getValueA().add(operacaoDto.getValueB());
 	}
 }

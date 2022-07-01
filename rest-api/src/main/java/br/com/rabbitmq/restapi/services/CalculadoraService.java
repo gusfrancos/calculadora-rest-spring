@@ -35,6 +35,7 @@ public class CalculadoraService {
 	public BigDecimal somar(BigDecimal a, BigDecimal b, String token) {
 		Message message = getMessage(a, b, token, OperacaoEnum.SUM);
 		
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE");
 		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
 				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
