@@ -2,7 +2,8 @@ package br.com.rabbitmq.calculadoraapi.configs;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Exchange;
+import org.springframework.amqp.core.ExchangeBuilder;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.QueueBuilder;
 import org.springframework.context.annotation.Bean;
@@ -18,18 +19,17 @@ public class RabbitMQConfiguration {
 	public static final String QUEUE_NAME = "calculadora-queue";
 
 	@Bean
-	Queue messagesQueue() {
+	public Exchange declareExchange() {
+		return ExchangeBuilder.directExchange(EXCHANGE_NAME).durable(true).build();
+	}
+
+	@Bean
+	public Queue declareQueue() {
 		return QueueBuilder.durable(QUEUE_NAME).build();
 	}
 
 	@Bean
-	DirectExchange messagesExchange() {
-		return new DirectExchange(EXCHANGE_NAME);
-	}
-
-	@Bean
-	Binding bindingMessages() {
-		return BindingBuilder.bind(messagesQueue()).to(messagesExchange()).with(QUEUE_NAME);
+	public Binding declareBinding(Exchange exchange, Queue queue) {
+		return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY).noargs();
 	}
 }
-

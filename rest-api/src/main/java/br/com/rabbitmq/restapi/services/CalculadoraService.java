@@ -14,7 +14,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.rabbitmq.restapi.configs.RabbitMQConfiguration;
-import br.com.rabbitmq.restapi.dto.OperacaoRestDTO;
+import br.com.rabbitmq.restapi.dtos.OperacaoRestDTO;
 import br.com.rabbitmq.restapi.enums.OperacaoEnum;
 
 @Service

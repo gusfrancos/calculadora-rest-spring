@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  calculadora:
+  rabbitmq:
     image: rabbitmq:3-management
     container_name: calculadora
     hostname: calculadora

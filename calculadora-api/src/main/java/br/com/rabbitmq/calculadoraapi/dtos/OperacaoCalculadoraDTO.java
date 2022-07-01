@@ -1,23 +1,19 @@
-package br.com.rabbitmq.restapi.dto;
+package br.com.rabbitmq.calculadoraapi.dtos;
 
 import java.math.BigDecimal;
 
-import br.com.rabbitmq.restapi.enums.OperacaoEnum;
-import lombok.Builder;
+import br.com.rabbitmq.calculadoraapi.enums.OperacaoEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
-@Builder
 @ToString
-public class OperacaoRestDTO {
-	
+public class OperacaoCalculadoraDTO {
 	private BigDecimal valueA;
-	
+
 	private BigDecimal valueB;
-	
+
 	private OperacaoEnum operacao;
-	
 }
