@@ -47,9 +47,9 @@ public class RestApiController {
 	@ApiResponse(code = 404, message = "Operação inválida") })
 	@GetMapping(path ="subtrair", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<BigDecimal> subtrair(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
-		LOGGER.info("[Rest API] - method subtrair [values {} | {}]", a, b);
+		LOGGER.info("[Rest API] [RestApiController] - método subtrair [values {} | {}]", a, b);
 		BigDecimal result = calculadoraService.subtrair(a, b, getToken(response));
-		LOGGER.info("[Rest API] - method subtrair [values {} + {} = {}]", a, b, result);
+		LOGGER.info("[Rest API] [RestApiController] - método subtrair [values {} + {} = {}]", a, b, result);
 		return ResponseEntity.ok(result);
 	}
 	
@@ -58,9 +58,9 @@ public class RestApiController {
 	@ApiResponse(code = 404, message = "Operação inválida") })
 	@GetMapping(path ="dividir", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<BigDecimal> dividir(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
-		LOGGER.info("[Rest API] - method dividir [values {} | {}]", a, b);
+		LOGGER.info("[Rest API] [RestApiController] - método dividir [values {} | {}]", a, b);
 		BigDecimal result = calculadoraService.dividir(a, b, getToken(response));
-		LOGGER.info("[Rest API] - method dividir [values {} + {} = {}]", a, b, result);
+		LOGGER.info("[Rest API] [RestApiController] - método dividir [values {} + {} = {}]", a, b, result);
 		return ResponseEntity.ok(result);
 	}
 	
@@ -69,9 +69,9 @@ public class RestApiController {
 	@ApiResponse(code = 404, message = "Operação inválida") })
 	@GetMapping(path ="multiplicar", produces = "application/json", consumes = "application/json")
 	public ResponseEntity<BigDecimal> multiplicar(HttpServletResponse response, @RequestParam("a") BigDecimal a, @RequestParam("b") BigDecimal b)  {
-		LOGGER.info("[Rest API] - method multiplicar [values {} | {}]", a, b);
+		LOGGER.info("[Rest API] [RestApiController] - método multiplicar [values {} | {}]", a, b);
 		BigDecimal result = calculadoraService.multiplicar(a, b, getToken(response));
-		LOGGER.info("[Rest API] - method multiplicar [values {} + {} = {}]", a, b, result);
+		LOGGER.info("[Rest API] [RestApiController] - método multiplicar [values {} + {} = {}]", a, b, result);
 		return ResponseEntity.ok(result);
 	}
 	

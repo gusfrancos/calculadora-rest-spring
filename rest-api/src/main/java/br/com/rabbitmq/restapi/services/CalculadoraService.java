@@ -35,7 +35,7 @@ public class CalculadoraService {
 	public BigDecimal somar(BigDecimal a, BigDecimal b, String token) {
 		Message message = getMessage(a, b, token, OperacaoEnum.SUM);
 		
-		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE");
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE - SOMAR");
 		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
 				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
@@ -49,11 +49,15 @@ public class CalculadoraService {
 	 * @return somatorio dos valores
 	 */
 	public BigDecimal subtrair(BigDecimal a, BigDecimal b, String token) {
-		return (a.subtract(b));
+		Message message = getMessage(a, b, token, OperacaoEnum.SUBTRACT);
+		
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE - SUBTRAIR");
+		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
+				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
 	
 	/**
-	 * Metodo responsavel por realizar a subtração
+	 * Metodo responsavel por realizar a divisão
 	 * 
 	 * @param a     - primeiro valor numerico
 	 * @param b     - segundo valor numerico
@@ -61,11 +65,15 @@ public class CalculadoraService {
 	 * @return somatorio dos valores
 	 */
 	public BigDecimal dividir(BigDecimal a, BigDecimal b, String token) {
-		return (a.divide(b));
+		Message message = getMessage(a, b, token, OperacaoEnum.DIVIDE);
+		
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE - DIVIDIR");
+		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
+				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
 	
 	/**
-	 * Metodo responsavel por realizar a subtração
+	 * Metodo responsavel por realizar a multiplicação
 	 * 
 	 * @param a     - primeiro valor numerico
 	 * @param b     - segundo valor numerico
@@ -73,11 +81,15 @@ public class CalculadoraService {
 	 * @return somatorio dos valores
 	 */
 	public BigDecimal multiplicar(BigDecimal a, BigDecimal b, String token) {
-		return (a.multiply(b));
+		Message message = getMessage(a, b, token, OperacaoEnum.MULTIPLY);
+		
+		LOGGER.info("[Rest API] [CalculadoraService] - SEND AND RECEIVE - DIVIDIR");
+		return (BigDecimal) rabbitTemplate.convertSendAndReceive(RabbitMQConfiguration.EXCHANGE_NAME,
+				RabbitMQConfiguration.ROUTING_KEY, message);
 	}
 	
 	/**
-	 * Metodo 
+	 * Metodo getMessage
 	 * @param a - primeiro valor numerico
 	 * @param b - segundo valor numerico
 	 * @param token - 
@@ -86,11 +98,12 @@ public class CalculadoraService {
 	 */
 	private Message getMessage(BigDecimal a, BigDecimal b, String token, OperacaoEnum operacao) {
 		String json = getJsonOfOperacaoDto(a, b, operacao);
-		LOGGER.info("[Project Rest API] - method getMessage [json {} | token {}]", json, token);
+		LOGGER.info("[Rest API] [CalculadoraService] - - método getMessage [json {} | token {}]", json, token);
 		return MessageBuilder.withBody(json.getBytes()).setHeader("token", token).build();
 	}
 	
 	/**
+	 * Método getJsonOfOperacaoDto
 	 * @param a
 	 * @param b
 	 * @param operacao

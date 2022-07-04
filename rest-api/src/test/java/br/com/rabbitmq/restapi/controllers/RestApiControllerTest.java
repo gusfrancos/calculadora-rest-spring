@@ -1,5 +1,9 @@
 package br.com.rabbitmq.restapi.controllers;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import java.math.BigDecimal;
 
 import javax.servlet.http.HttpServletResponse;
@@ -17,12 +21,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
-
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import br.com.rabbitmq.restapi.configs.MDCFilterConfiguration;
 import br.com.rabbitmq.restapi.services.CalculadoraService;
@@ -45,53 +43,61 @@ public class RestApiControllerTest {
 	}
 	
 	@Test
-	public void NoParamsCalcularSomarShouldReturnBadRequest() throws Exception {
-		this.mockMvc.perform(get("/calcular/somar").contentType("application/json"))
-			.andDo(print()).andExpect(status().isBadRequest());
+	@DisplayName("Teste Ok parametros de somar da controller")
+	public void ParamCalcularSomarShouldReturnOk() throws Exception {
+		this.mockMvc.perform(get("/calcular/somar").param("a", "10").param("b", "20").contentType("application/json"))
+			.andDo(print()).andExpect(status().isOk());
 	}
 	
 	@Test
-	public void NoParamsCalcularMultiplicarShouldReturnBadRequest() throws Exception {
-		this.mockMvc.perform(get("/calcular/multiplicar").contentType("application/json"))
-			.andDo(print()).andExpect(status().isBadRequest());
-	}
-	
-	@Test
-	public void NoParamsCalcularDividirShouldReturnBadRequest() throws Exception {
-		this.mockMvc.perform(get("/calcular/dividir").contentType("application/json"))
-			.andDo(print()).andExpect(status().isBadRequest());
-	}
-	
-	@Test
-	public void NoParamsCalcularSubtrairShouldReturnBadRequest() throws Exception {
-		this.mockMvc.perform(get("/calcular/subtrair").contentType("application/json"))
-			.andDo(print()).andExpect(status().isBadRequest());
-	}
-		
-//	@Test
-//	public void ParamCalcularSomarShouldReturnOk() throws Exception {
-//		this.mockMvc.perform(get("/calcular/somar").param("a", "10").param("b", "20").contentType("application/json"))
-//			.andDo(print()).andExpect(status().isOk());
-//	}
-	
-	@Test
+	@DisplayName("Teste Ok parametros de subtrair da controller")
 	public void ParamCalcularSubtrairShouldReturnOk() throws Exception {
 		this.mockMvc.perform(get("/calcular/subtrair").param("a", "10").param("b", "20").contentType("application/json"))
 			.andDo(print()).andExpect(status().isOk());
 	}
 	
 	@Test
+	@DisplayName("Teste Ok parametros de dividir da controller")
 	public void ParamCalcularDividirShouldReturnOk() throws Exception {
 		this.mockMvc.perform(get("/calcular/dividir").param("a", "10").param("b", "20").contentType("application/json"))
 			.andDo(print()).andExpect(status().isOk());
 	}
 	
 	@Test
+	@DisplayName("Teste Ok parametros de multiplicar da controller")
 	public void ParamCalcularMultiplicarShouldReturnOk() throws Exception {
 		this.mockMvc.perform(get("/calcular/multiplicar").param("a", "10").param("b", "20").contentType("application/json"))
 			.andDo(print()).andExpect(status().isOk());
 	}
-
+	
+	@Test
+	@DisplayName("Teste NOk parametros de somar da controller")
+	public void NoParamsCalcularSomarShouldReturnBadRequest() throws Exception {
+		this.mockMvc.perform(get("/calcular/somar").contentType("application/json"))
+			.andDo(print()).andExpect(status().isBadRequest());
+	}
+	
+	@Test
+	@DisplayName("Teste NOk parametros de multiplicar da controller")
+	public void NoParamsCalcularMultiplicarShouldReturnBadRequest() throws Exception {
+		this.mockMvc.perform(get("/calcular/multiplicar").contentType("application/json"))
+			.andDo(print()).andExpect(status().isBadRequest());
+	}
+	
+	@Test
+	@DisplayName("Teste NOk parametros de dividir da controller")
+	public void NoParamsCalcularDividirShouldReturnBadRequest() throws Exception {
+		this.mockMvc.perform(get("/calcular/dividir").contentType("application/json"))
+			.andDo(print()).andExpect(status().isBadRequest());
+	}
+	
+	@Test
+	@DisplayName("Teste NOk parametros de subtrair da controller")
+	public void NoParamsCalcularSubtrairShouldReturnBadRequest() throws Exception {
+		this.mockMvc.perform(get("/calcular/subtrair").contentType("application/json"))
+			.andDo(print()).andExpect(status().isBadRequest());
+	}
+		
 	@Test
 	@DisplayName("Teste da chamada de somar da controller")
 	void list_ReturnsCorrectValueOfSum_WhenSuccessful() {

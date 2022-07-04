@@ -33,7 +33,7 @@ public class CalculadoraApiListener {
 			ObjectMapper mapper = new ObjectMapper();
 			OperacaoCalculadoraDTO operacaoDto = mapper.readValue(fileBody, OperacaoCalculadoraDTO.class);
 			LOGGER.info("[Project Calculadora API] [CalculadoraApiListener] - Método RECEIVE [OperacaoCalculadorarDTO {}]", operacaoDto.toString());
-			return operacaoService.somar(operacaoDto);
+			return operacaoService.calcular(operacaoDto);
 		} catch (JsonProcessingException e) {
 			throw new RuntimeException("[Project Calculadora API] [CalculadoraApiListener] - Método RECEIVE - Erro ao converter objeto em json", e);
 		}
