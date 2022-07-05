@@ -33,3 +33,8 @@ public class RabbitMQConfiguration {
 		return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY).noargs();
 	}
 }
+
+/**
+* @Configuration
+* É uma annotation que indica que determinada classe possui métodos que expõe novos beans.
+*/

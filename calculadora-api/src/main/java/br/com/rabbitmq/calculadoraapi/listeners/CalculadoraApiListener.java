@@ -39,3 +39,12 @@ public class CalculadoraApiListener {
 		}
     }
 }
+
+/**
+* @Component
+* A annotation básica que indica que uma classe vai ser gerenciada pelo container do Spring. 
+* Todas as annotations descritas acima são, na verdade, derivadas de @Component.
+* 
+* @Autowired
+* Anotação utilizada para marcar o ponto de injeção na sua classe. Você pode colocar ela sobre atributos ou sobre o seu construtor com argumentos.  
+*/
