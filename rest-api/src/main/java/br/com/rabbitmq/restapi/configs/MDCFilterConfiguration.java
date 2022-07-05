@@ -28,3 +28,16 @@ public class MDCFilterConfiguration {
         return registrationBean;
     }
 }
+
+/**
+* @ Data
+* Essa anotação é a combinação das anotações: @ ToString, @EqualsAndHashCode, @ Getter e @ Setter. 
+* Também fornece a geração de construtores, adicionando um construtor público que leva qualquer campo @NonNull 
+* ou final como parâmetros.
+*
+* @Configuration
+* É uma annotation que indica que determinada classe possui métodos que expõe novos beans.
+* 
+* @ConfigurationProperties
+* mapear todas as propriedades definidas no application.properties arquivo para um POJO
+*/

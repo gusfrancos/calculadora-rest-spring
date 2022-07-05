@@ -83,3 +83,27 @@ public class RestApiController {
 		return response.getHeader(MDCFilterConfiguration.DEFAULT_RESPONSE_TOKEN_HEADER);
 	}
 }
+
+
+/*
+* @Autowired
+* Anotação utilizada para marcar o ponto de injeção na sua classe. 
+* Você pode colocar ela sobre atributos ou sobre o seu construtor com argumentos.
+* delega ao Spring Boot a inicialização do objeto;
+* 
+* @RestController permite definir um controller com características REST;
+* @RequestMapping permite definir uma rota. Caso não seja informado o método HTTP da rota, ela será definida para todos os métodos.
+* @PathVariable indica que o valor da variável virá de uma informação da rota;
+* @RequestBody indica que o valor do objeto virá do corpo da requisição;
+* @Valid indica que os dados recebidos devem ser validados.
+* @GetMapping é composta da @RequestMapping. Ela é utilizada para mapear requisições HTTP GET. Essa notação é muito importante quando a pessoa desenvolvedora precisa fazer requisições via postman, pois nessa plataforma é necessário informar qual o tipo do método está sendo esperado.
+* 
+* OPENAPI:
+* @RequestBody  - Representa o corpo da solicitação em uma operação.
+* @ApiResponse  - Representa a resposta em um operação.
+* @Tag	        - Representa tags para uma operação ou para a definição OpenAPI.
+*
+* @ApiOperation - Para cada um de nossos endpoints de operação, podemos usar o @ApiOperation anotação para descrever o endpoint e seu tipo de resposta
+* 
+*/
+

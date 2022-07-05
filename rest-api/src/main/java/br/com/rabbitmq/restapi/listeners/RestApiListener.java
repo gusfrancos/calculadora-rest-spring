@@ -33,3 +33,9 @@ public class RestApiListener {
     }
 
 }
+
+/**
+* @Component
+ * A annotation básica que indica que uma classe vai ser gerenciada pelo container do Spring. 
+ * Todas as annotations descritas acima são, na verdade, derivadas de @Component. 
+ */

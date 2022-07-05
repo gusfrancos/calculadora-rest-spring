@@ -88,3 +88,21 @@ public class MDCFilter extends OncePerRequestFilter {
         return false;
     }
 }
+
+
+/**
+ * @Getter/@Setter	Com estas anotações não se faz mais necessária a criação dos métodos de recuperação e configuração das propriedades das classes.
+ * @ToString	Não há mais necessidade de iniciar um debugger para ver os campos. Basta deixar que o lombok gere o toString()
+ * @EqualsAndHashCode	Método equals e hashCode são gerados automaticamente para os campos do objeto de forma fácil e simples
+ * @Data	Todos juntos agora: Um atalho para @ToString, @EqualsAndHashCode,@Getter em todos os campos, e @Setter em todos os campos não-finais. Você ainda pode obter um construtor livre para inicializar seus campos finals!
+ * @Cleanup	Gestão de recursos automática: Chame com segurança os métodos close()sem problemas.
+ * @Synchronized	synchronized’s corretos. Não exponha seus locks.
+ * @SneakThrows	Para lançar exceções onde antes não se era comum lançar.
+ * 
+ * 
+ * @Component
+ * A annotation básica que indica que uma classe vai ser gerenciada pelo container do Spring. 
+ * Todas as annotations descritas acima são, na verdade, derivadas de @Component. 
+ */
+
+
